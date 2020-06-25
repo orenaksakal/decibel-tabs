@@ -6,7 +6,7 @@ function TabsWrapper({ tabs }) {
   return (
     <Tabs>
       {tabs.map((tab, index) => {
-        return <Tab key={index}>Hello from {tab.name} tab</Tab>;
+        return <Tab key={index + tab.name}>Hello from {tab.name} tab</Tab>;
       })}
     </Tabs>
   );

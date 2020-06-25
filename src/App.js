@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Tab, Tabs } from '@decibel/components';
+
+function TabsWrapper({ tabs }) {
+  return (
+    <Tabs>
+      {tabs.map((tab, index) => {
+        return <Tab key={index}>Hello from {tab.name} tab</Tab>;
+      })}
+    </Tabs>
+  );
+}
 
 function App() {
+  const [tabs, setTabs] = useState([{ name: 'first' }, { name: 'second' }, { name: 'third' }]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <span
+        onClick={() => {
+          setTabs([{ name: 'first' }]);
+        }}
+      >
+        Remove last tabs
+      </span>
+      <TabsWrapper tabs={tabs}></TabsWrapper>
+    </>
   );
 }
 

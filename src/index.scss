@@ -1,0 +1,7 @@
+$acoustic-font-path: '../node_modules/@decibel/components/lib/scss/' !global;
+// temporary file to load all component styles and inject them into the DOM,
+// until Decibel is adopted in all UIs
+
+$acoustic-font-path: '~@decibel/components/lib/scss/' !global;
+@import '~@decibel/components/lib/scss/globals/scss/vars';
+@import '~@decibel/components/lib/scss/styles';
